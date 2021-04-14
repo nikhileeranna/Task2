@@ -1,0 +1,16 @@
+// Create a request instance
+var req = new XMLHttpRequest();
+// Initate a connection or create a connection
+req.open('get','https://restcountries.eu/rest/v2/all',true);
+// sending the request
+req.send();
+// load the function
+// this function will be triggered only when the data has been received successfully
+req.onload=function(){
+var data = JSON.parse(this.response);
+   for(let i=0;i<data.length;i++)
+   {
+    console.log(data[i].name);
+   }
+
+}
